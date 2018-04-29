@@ -1,3 +1,9 @@
 .component{
     padding: 6px;
 }
+span{
+    margin-left: 10px;
+}
+input{
+    vertical-align: bottom;
+}

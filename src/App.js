@@ -8,22 +8,22 @@ import { LinkContainer } from 'react-router-bootstrap';
 class App extends React.Component{
 constructor(){
   super()
-  this.state = {aKey: 1}
+  this.state = {aKey: 3}
 }
 handleSelect=(eventKey)=> {
   // event.preventDefault();
-  
+  // alert(eventKey)
   this.setState({aKey: eventKey})
 }
 render = () => (
   <Router>
     <div>
       <Nav bsStyle="tabs" activeKey={this.state.aKey} onSelect={k=>this.handleSelect(k)}>
-      <LinkContainer to="/">
-        <NavItem eventKey="1" href="/home">
-          Edutor
-        </NavItem>
-     </LinkContainer>
+          <LinkContainer to="/edutor">
+            <NavItem eventKey="4" href="/">
+              Edutor
+            </NavItem>
+         </LinkContainer>
         <LinkContainer to="/mc">
         <NavItem eventKey="2" title="Item">
         Multiple Choice
@@ -38,7 +38,8 @@ render = () => (
 
       <hr /> 
 
-      <Route exact path="/" component={Edutor} />
+        <Route exact path="/" component={()=><div>Application front page</div>} />
+      <Route path="/edutor" component={Edutor} />
       <Route path="/mc" component={MC} />
       <Route path="/topics" component={Topics} />
     </div>
