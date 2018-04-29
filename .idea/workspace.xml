@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19f70c59-ada2-45a9-8d5b-bd9683b57122" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/mc/CB.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/mc/Q.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mc/MC.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mc/MC.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/mc/MC.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mc/MC.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mc/Q.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mc/Q.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MC.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MC.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/mc/MC.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="34" column="46" lean-forward="true" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+            <state relative-caret-position="373">
+              <caret line="31" column="65" selection-start-line="31" selection-start-column="65" selection-end-line="31" selection-end-column="65" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -66,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Q.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Q.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/mc/Q.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="17" column="85" selection-start-line="17" selection-start-column="85" selection-end-line="17" selection-end-column="85" />
+            <state relative-caret-position="240">
+              <caret line="19" column="85" lean-forward="true" selection-start-line="19" selection-start-column="85" selection-end-line="19" selection-end-column="85" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -113,9 +108,9 @@
         <option value="$PROJECT_DIR$/src/components/mc/MC.css" />
         <option value="$PROJECT_DIR$/src/components/mc/CheckBox.jsx" />
         <option value="$PROJECT_DIR$/src/components/mc/Question.jsx" />
-        <option value="$PROJECT_DIR$/src/components/mc/MC.jsx" />
         <option value="$PROJECT_DIR$/src/components/mc/CB.jsx" />
         <option value="$PROJECT_DIR$/src/components/mc/Q.jsx" />
+        <option value="$PROJECT_DIR$/src/components/mc/MC.jsx" />
       </list>
     </option>
   </component>
@@ -258,12 +253,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524974245391</updated>
-      <workItem from="1524974249610" duration="18953000" />
+      <workItem from="1524974249610" duration="20674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18953000" />
+    <option name="totallyTimeSpent" value="20674000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -347,16 +342,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/mc/MC.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="34" column="46" lean-forward="true" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/mc/CB.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -369,10 +354,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/mc/Q.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="17" column="85" selection-start-line="17" selection-start-column="85" selection-end-line="17" selection-end-column="85" />
+        <state relative-caret-position="240">
+          <caret line="19" column="85" lean-forward="true" selection-start-line="19" selection-start-column="85" selection-end-line="19" selection-end-column="85" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/mc/MC.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="31" column="65" selection-start-line="31" selection-start-column="65" selection-end-line="31" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

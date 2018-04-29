@@ -16,11 +16,12 @@ class Question extends React.Component {
             (target.checked)?
                 this.state.answers.push(target.name):
                 this.state.answers = this.state.answers.filter(el=>el !== target.name);
-            console.log(this.state.answers)
+            console.log(this.state.answers);
+            this.props.getAnswers({q: this.props.q.question, a: this.state.answers});
     }
 
     render() {
-        const q = this.props.question;
+        const q = this.props.q;
         return (
             <div>
                 <div><h4>{q.question}</h4></div>
