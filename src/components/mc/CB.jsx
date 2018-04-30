@@ -14,10 +14,10 @@ class CB extends React.Component {
         this.props.change(event.target)
     }
     render() {
-        // console.log(this.props.name)
         return (
             <label>
-                <input type="checkbox"
+                <input
+                        type="checkbox"
                        checked={this.state.isChecked}
                        onChange={this.doChange}
                        name={this.props.name}
