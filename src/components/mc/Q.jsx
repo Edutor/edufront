@@ -1,7 +1,7 @@
 import React from "react";
 import CB from './CB';
 import './MC.css';
-const user = "Thomas";
+const user = {id: 1}; //matches the PersonIdentifier format on the backend.
 class Question extends React.Component {
     constructor(props) {
         super(props);
@@ -12,12 +12,13 @@ class Question extends React.Component {
     }
 
     toggleChange = (target) => {
-            (target.checked)?
-                this.state.answers.push(target.name):
-                this.state.answers = this.state.answers.filter(el=>el !== target.name);
-            console.log(this.state.answers);
-            this.props.getAnswers({id: this.props.q.id, q: this.props.q.question, answers: this.state.answers, solver: user});
-    }
+             (target.checked)?
+                 this.state.answers.push(target.name):
+                 this.state.answers = this.state.answers.filter(el=>el !== target.name);
+            // console.log(this.state.answers);
+            // this.props.getAnswers({id: this.props.q.id, q: this.props.q.question, answers: this.state.answers, solver: user});
+            this.props.addAnswer({id: this.props.q.id, answers: this.state.answers, solver: user});
+    };
 
     render() {
         const q = this.props.q;
@@ -28,7 +29,7 @@ class Question extends React.Component {
                     q.choices.map((c,i)=>
                         <div key={i} >
                             <CB key={c} name={c} change={this.toggleChange}/>
-                            <span width="20px"></span>{c}
+                            {c}
                         </div>
                     )
                 }
