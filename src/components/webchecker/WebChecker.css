@@ -1,0 +1,26 @@
+.component{
+    padding: 6px;
+}
+span{
+    margin-left: 10px;
+}
+input{
+    vertical-align: bottom;
+}
+thead td
+{
+	font-weight: bold;
+}
+td
+{
+	border: solid 1px #000;
+	padding: 5px;
+}
+.successful
+{
+	background: rgba(0,255,0,0.5);
+}
+.failed
+{
+	background: rgba(255,0,0,0.5);
+}

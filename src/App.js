@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import {Nav, NavItem} from 'react-bootstrap';
 import MC from './components/mc/MC.jsx'
+import WebChecker from './components/webchecker/WebChecker.jsx'
 import './App.css'
 import { LinkContainer } from 'react-router-bootstrap';
 
@@ -29,8 +30,13 @@ render = () => (
         Multiple Choice
         </NavItem>
         </LinkContainer>
+		<LinkContainer to="/webchecker">
+        <NavItem eventKey="3" title="Item">
+        WebChecker
+        </NavItem>
+        </LinkContainer>
         <LinkContainer to="/topics">
-        <NavItem  eventKey="3">
+        <NavItem  eventKey="4">
          Other Topics
         </NavItem>
         </LinkContainer>
@@ -38,9 +44,10 @@ render = () => (
 
       <hr /> 
 
-        <Route exact path="/" component={()=><div>Application front page</div>} />
+	  <Route exact path="/" component={()=><div>Application front page</div>} />
       <Route path="/edutor" component={Edutor} />
       <Route path="/mc" component={MC} />
+	  <Route path="/webchecker" component={WebChecker} />
       <Route path="/topics" component={Topics} />
     </div>
   </Router>
