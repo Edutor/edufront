@@ -1,0 +1,24 @@
+#componentadmin{
+    padding: 5px;
+}
+#componentadmin label, #componentadmin input, #componentadmin textarea
+{
+	float: left;
+}
+#componentadmin label
+{
+	width: 100px;
+}
+#componentadmin input, #componentadmin textarea
+{
+	width: 200px;
+}
+#componentadmin input[type=button]
+{
+	width: 300px;
+}
+#componentadmin form div
+{
+	padding: 10px 0px;
+	clear: both;
+}

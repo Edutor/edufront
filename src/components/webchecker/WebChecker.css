@@ -1,0 +1,36 @@
+#componentwebchecker{
+    padding: 5px;
+}
+#componentwebchecker label, #componentwebchecker input
+{
+	float: left;
+}
+#componentwebchecker label
+{
+	width: 100px;
+}
+#componentwebchecker input
+{
+	width: 200px;
+}
+#componentwebchecker input[type=button]
+{
+	width: 300px;
+}
+#componentwebchecker form div
+{
+	padding: 10px 0px;
+	clear: both;
+}
+#componentwebchecker td
+{
+	border: solid 1px #000;
+}
+#componentwebchecker .successful
+{
+	background: rgba(0,255,0,0.5);
+}
+#componentwebchecker .failed
+{
+	background: rgba(255,0,0,0.5);
+}
