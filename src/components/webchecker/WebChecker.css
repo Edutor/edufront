@@ -1,26 +1,36 @@
-.component{
-    padding: 6px;
+#componentwebchecker{
+    padding: 5px;
 }
-span{
-    margin-left: 10px;
-}
-input{
-    vertical-align: bottom;
-}
-thead td
+#componentwebchecker label, #componentwebchecker input
 {
-	font-weight: bold;
+	float: left;
 }
-td
+#componentwebchecker label
+{
+	width: 100px;
+}
+#componentwebchecker input
+{
+	width: 200px;
+}
+#componentwebchecker input[type=button]
+{
+	width: 300px;
+}
+#componentwebchecker form div
+{
+	padding: 10px 0px;
+	clear: both;
+}
+#componentwebchecker td
 {
 	border: solid 1px #000;
-	padding: 5px;
 }
-.successful
+#componentwebchecker .successful
 {
 	background: rgba(0,255,0,0.5);
 }
-.failed
+#componentwebchecker .failed
 {
 	background: rgba(255,0,0,0.5);
 }

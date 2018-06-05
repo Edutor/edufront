@@ -13,8 +13,10 @@ class Question extends React.Component {
 
     toggleChange = (target) => {
              (target.checked)?
-                 this.state.answers.push(target.name):
-                 this.state.answers = this.state.answers.filter(el=>el !== target.name);
+				 this.state.answers.push(target.name):
+				 this.setState({
+					answers: this.state.answers.filter(el=>el !== target.name)
+				});
             // console.log(this.state.answers);
             // this.props.getAnswers({id: this.props.q.id, q: this.props.q.question, answers: this.state.answers, solver: user});
             this.props.addAnswer({id: this.props.q.id, answers: this.state.answers, solver: user});

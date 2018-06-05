@@ -1,53 +1,56 @@
 import React from "react";
-import Select from 'react-select';
-import Q from './Q';
 import './WebChecker.css';
 
-const tagUrl = 'http://localhost:8080/webchecker/';
-const webcheckerUrl = 'http://localhost:8080/webchecker/';
+const webcheckerUrlCheck = 'http://localhost:8080/evaluate/URL';
 
 class WebChecker extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			challengeid: 0,
-			url: "",
+			webchallengeid: 0,
+			websolutionurl: "",
 			tags: [],
 			response: null
 		};
 	}
 
 	componentDidMount = () => {
-		fetch(tagUrl, { method: 'get' }).then(
-			data => { return data.json(); }
-		).then(data => {
-			this.setState({ tags: data })
-			console.log(this.state.tags);
-		});
-
 	};
 
-	updateChallengeID = (e) => {
+	updateWebChallengeId = (e) => {
 		this.setState({
-			challengeid: e.target.value
+			webchallengeid: e.target.value
 		});
 	}
 
-	updateUrl = (e) => {
+	updateWebSolutionUrl = (e) => {
 		this.setState({
-			url: e.target.value
+			websolutionurl: e.target.value
 		});
 	}
 
-	handleSubmit = () => {
+	handleCheck = () => {
 		var data = new FormData();
 
-		data.append("url", this.state.url);
-		data.append("challengeid", this.state.challengeid);
+		data = {
+			url: this.state.websolutionurl, 
+			challenge: {
+				id: parseInt(this.state.webchallengeid)
+			}
+		};
 
-		fetch(webcheckerUrl,
+		data = JSON.stringify(data);
+
+		//data.append("url", this.state.websolutionurl);
+		//data.append("id", this.state.webchallengeid);
+
+		fetch(webcheckerUrlCheck,
 			{
 				method: "POST",
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
 				body: data
 			})
 			.then(function (res) {
@@ -68,30 +71,47 @@ class WebChecker extends React.Component {
 		
 		
 		return (
-			<div className="component">
-				<input
-					type="text"
-					name="challengeid"
-					placeholder="CHALLENGEID..."
-					onChange={e => this.updateChallengeID(e)}
-				/>
+			<div id="componentwebchecker">
+				<h2>WebChallengeCheck</h2>
+				<form>
+					<div>
+						<label htmlFor="webchallengeid">ID</label>
+						<input
+							type="text"
+							id="webchallengeid"
+							name="webchallengeid"
+							onChange={e => this.updateWebChallengeId(e)}
+						/>
+					</div>
+					<div>
+						<label htmlFor="websolutionurl">URL</label>	
+						<input
+							type="text"
+							id="websolutionurl"
+							name="websolutionurl"
+							value={this.state.websolutionurl}
+							onChange={e => this.updateWebSolutionUrl(e)}
+						/>
+					</div>
+					<div>
+						<input
+							type="button" 
+							value="CHECK"
+							onClick={this.handleCheck}
+						/>
+					</div>
+				</form>
 				
-				<input
-					type="text"
-					name="url"
-					placeholder="URL..."
-					value={this.state.url}
-					onChange={e => this.updateUrl(e)}
-				/>				
-
-				<h2>WebChecker</h2>
 				<div>
 					{
-						(this.state.response != null) ? 
+						(this.state.response != null && this.state.response.numberoftests > 0) ? 
 							<div>
 								<h2>Results...</h2>
-								<p>Checked: { this.state.response.solution.url }</p>
+								{
+									//<p>Checked: { this.state.response.solution.url }</p>
+								}
 								<p>Grade: { this.state.response.grade }</p>
+								<p>Explanation: { this.state.response.explanation }</p>
 								<p>NumberOfTests: { this.state.response.numberoftests }</p>
 								<p>Successful: { this.state.response.successful }</p>
 								<p>Failed: { this.state.response.failed }</p>
@@ -109,9 +129,7 @@ class WebChecker extends React.Component {
 								{
 									Object.keys(this.state.response.tests).map((key)  =>
 									{
-										
-										//{key + "hello " + this.state.response.tests[key].status}</p>
-										return(<tr className={this.state.response.tests[key].status == 'SUCCESSFUL' ? 'successful' : 'failed'}>
+										return(<tr className={this.state.response.tests[key].status === 'SUCCESSFUL' ? 'successful' : 'failed'}>
 											<td>{key}</td>
 											<td>{this.state.response.tests[key].status}</td>
 											<td>{this.state.response.tests[key].message}</td>
@@ -126,8 +144,6 @@ class WebChecker extends React.Component {
 							""
 					}
 				</div>
-
-				<button onClick={this.handleSubmit}>Submit</button>
 			</div>)
 	}
 }
