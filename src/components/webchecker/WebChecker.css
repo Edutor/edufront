@@ -9,9 +9,26 @@
 {
 	width: 100px;
 }
-#componentwebchecker input
+#componentwebchecker select, #componentwebchecker input
 {
 	width: 200px;
+}
+#componentwebchecker table
+{
+	width: 300px;
+	clear: both;
+}
+#componentwebchecker table td:last-child
+{
+	width: 50px;
+	text-align: center;
+}
+#componentwebchecker input[type=radio]
+{
+	float: none;
+	width: auto;
+	vertical-align: middle;
+	margin: 0px;
 }
 #componentwebchecker input[type=button]
 {

@@ -9,7 +9,7 @@
 {
 	width: 100px;
 }
-#componentadmin input, #componentadmin textarea
+#componentadmin input, #componentadmin select, #componentadmin textarea
 {
 	width: 200px;
 }
