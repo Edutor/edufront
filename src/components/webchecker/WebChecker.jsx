@@ -128,7 +128,7 @@ class WebChecker extends React.Component {
 						: ""
 					}
 					{
-						(this.state.webchallengeid != 0) ?
+						(this.state.webchallengeid !== 0) ?
 						<div>
 							<label htmlFor="websolutionurl">URL</label>	
 							<input
