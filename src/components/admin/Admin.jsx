@@ -43,35 +43,35 @@ class Admin extends React.Component {
 		});
 	}
 
-	handleUpload = () => {
-		var data = new FormData();
+	handleUpload = (e) => {
+		if(this.state.webchallengetype !== "")
+		{
+			var data = new FormData();
 
-		data.append("webchallengename", this.state.webchallengename);
-		data.append("webchallengetype", this.state.webchallengetype);
-		data.append("webchallengedescription", this.state.webchallengedescription);
-		data.append("webchallengequestion", this.state.webchallengequestion);
-		data.append("webchallengefile", this.uploadFile.files[0]);
+			data.append("webchallengename", this.state.webchallengename);
+			data.append("webchallengetype", this.state.webchallengetype);
+			data.append("webchallengedescription", this.state.webchallengedescription);
+			data.append("webchallengequestion", this.state.webchallengequestion);
+			data.append("webchallengefile", this.uploadFile.files[0]);
 
-		console.log(this.state.webchallengename)
-
-		fetch(webcheckerUrlUpload,
-			{
-				method: "POST",
-				body: data
-			})
-			.then(function (res) {
-				return res.json();
-			})
-			.then((data) => {
-				alert(data.status);
-				console.log(data);
-				this.setState({response: data});
-			})
-			.catch(error => {
-				console.log("Error:" + error.message);
-				this.setState({response: null});
-			});
-			
+			fetch(webcheckerUrlUpload,
+				{
+					method: "POST",
+					body: data
+				})
+				.then(function (res) {
+					return res.json();
+				})
+				.then((data) => {
+					alert("WebChallenge uploaded...");
+					console.log(data);
+					this.setState({response: data});
+				})
+				.catch(error => {
+					console.log("Error:" + error.message);
+					this.setState({response: null});
+				});
+		}
 	};
 
 	render() {
@@ -90,12 +90,15 @@ class Admin extends React.Component {
 					</div>
 					<div>
 						<label htmlFor="webchallengetype">TYPE</label>
-						<input
-							type="text"
+						<select
 							id="webchallengetype"
 							name="webchallengetype"
 							onChange={e => this.updateWebChallengeType(e)}
-						/>
+							required>
+							<option defaultValue="" hidden></option>
+							<option value="SELENIUM">SELENIUM</option>
+							<option value="REST">RESTASSURED</option>
+						</select>
 					</div>
 					<div>
 						<label htmlFor="webchallengedescription">DESCRIPTION</label>
@@ -126,8 +129,8 @@ class Admin extends React.Component {
 					<div>
 						<input 
 							type="button"
-							value="UPLOAD"
-							onClick={this.handleUpload}
+							value="UPLOAD"	
+							onClick={e => this.handleUpload(e)}						
 						/>
 					</div>
 				</form>
