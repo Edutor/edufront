@@ -1,7 +1,7 @@
 import React from "react";
 import './MC.css'
 
-class CB extends React.Component {
+class CheckBox extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -27,4 +27,4 @@ class CB extends React.Component {
         );
     }
 }
-export default CB;
+export default CheckBox;

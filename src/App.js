@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Nav, NavItem } from 'react-bootstrap';
-import MC from './components/mc/MC.jsx'
-import WebChecker from './components/webchecker/WebChecker.jsx'
-import Admin from './components/admin/Admin.jsx'
-import './App.css'
+import MC from './components/mc/MC';
+import WebChecker from './components/webchecker/WebChecker';
+import Admin from './components/admin/Admin';
+import Collection from './components/collection/Collection';
+import './App.css';
 import { LinkContainer } from 'react-router-bootstrap';
 
 class App extends React.Component {
@@ -41,6 +42,11 @@ class App extends React.Component {
 							Admin
         				</NavItem>
 					</LinkContainer>
+					<LinkContainer to="/collection">
+						<NavItem eventKey="5">
+							Collection
+        				</NavItem>
+					</LinkContainer>
 				</Nav>
 
 				<hr />
@@ -50,6 +56,7 @@ class App extends React.Component {
 				<Route path="/mc" component={MC} />
 				<Route path="/webchecker" component={WebChecker} />
 				<Route path="/admin" component={Admin} />
+				<Route path="/collection" component={Collection} />
 			</div>
 		</Router>
 	)

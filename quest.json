@@ -1,0 +1,44 @@
+{
+  "type": "SECTION",
+  "title": {
+    "type": "TEXT",
+    "value": "Overordnede spørgsmål"
+  },
+  "contents": [
+    {
+      "type": "TEXT",
+      "value": "Svar på så mange af nedenstaående spørgsmål som muligt, bla bla bla"
+    },
+    {
+      "type": "QUERY",
+      "id": "1"
+    },
+    {
+      "type": "QUERY",
+      "id": "2"
+    },
+    {
+      "type": "SECTION",
+      "title": {
+        "type": "TEXT",
+        "value": "Hvis du har tid:"
+      },
+      "contents": [
+        {
+          "type": "QUERY",
+          "id": "3"
+        },
+        {
+          "type": "CHOICE",
+          "test": "!3",
+          "contents": [
+            {
+              "type": "QUERY",
+              "id": "4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
